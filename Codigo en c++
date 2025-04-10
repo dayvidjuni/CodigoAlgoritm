@@ -1,0 +1,78 @@
+#include <iostream>  // Para entrada/salida
+#include <vector>    // Para usar vectores (matrices dinámicas)
+#include <ctime>     // Para funciones de tiempo
+#include <cstdlib>   // Para rand() y srand()
+#include <cmath>     // Para funciones matemáticas (sqrt)
+
+using namespace std; // Usar espacio de nombres estándar
+
+vector<vector<int>> generarMatriz(int filas, int columnas) {
+    // Crea matriz de tamaño filas x columnas inicializada con ceros
+    vector<vector<int>> matriz(filas, vector<int>(columnas));
+    
+    // Llena la matriz con valores aleatorios 0-100
+    for (int i = 0; i < filas; ++i)
+        for (int j = 0; j < columnas; ++j)
+            matriz[i][j] = rand() % 101; // rand() % 101 da valores 0-100
+    
+    return matriz; // Retorna matriz generada
+}
+int contarPares(const vector<vector<int>>& matriz) {
+    int conteo = 0; // Inicializa contador
+    
+    // Recorre cada fila (usando referencia constante para eficiencia)
+    for (const auto& fila : matriz)
+        // Recorre cada valor en la fila
+        for (int val : fila)
+            if (val % 2 == 0) ++conteo; // Si es par, incrementa contador
+    
+    return conteo; // Retorna total de pares
+}
+
+bool esPrimo(int n) {
+    if (n <= 1) return false;  // Números <=1 no son primos
+    if (n == 2) return true;   // 2 es primo
+    if (n % 2 == 0) return false; // Descartar pares
+    
+    for (int i = 3; i * i <= n; i += 2)
+        if (n % i == 0) return false; // Si es divisible, no es primo
+    
+    return true; // Si no encontró divisores, es primo
+}
+
+// Función para contar números primos
+int contarPrimos(const vector<vector<int>>& matriz) {
+    int conteo = 0; // Inicializa contador
+    
+    // Recorre cada fila
+    for (const auto& fila : matriz)
+        // Recorre cada valor
+        for (int val : fila)
+            if (esPrimo(val)) ++conteo; // Si es primo, incrementa
+    
+    return conteo; // Retorna total de primos
+}
+
+// Función principal
+int main() {
+    srand(time(0)); // Semilla para números aleatorios (usando tiempo actual)
+    
+    int filas = 100, columnas = 100; // Tamaño de matriz 100x100
+    vector<vector<int>> matriz = generarMatriz(filas, columnas); 
+    
+    clock_t inicio = clock(); // Marca tiempo inicial 
+    int pares = contarPares(matriz); // Ejecuta conteo
+    clock_t fin = clock(); // Marca tiempo final
+    
+    cout << "Números pares: " << pares << endl;
+    // Calcula tiempo en segundos (diferencia de clocks / clocks por segundo)
+    cout << "Tiempo de conteo pares: " << double(fin - inicio) / CLOCKS_PER_SEC << " segundos" << endl;
+    
+    inicio = clock(); // Reinicia contador
+    int primos = contarPrimos(matriz); // Ejecuta conteo
+    fin = clock(); // Detiene contador
+    
+    cout << "Números primos: " << primos << endl;
+    cout << "Tiempo de conteo primos: " << double(fin - inicio) / CLOCKS_PER_SEC << " segundos" << endl;//mostrar datos
+    
+    return 0; }
