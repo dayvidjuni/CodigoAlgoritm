@@ -1,0 +1,62 @@
+# Importar módulos necesarios
+import random  # Para generar números aleatorios
+import time    # Para medir tiempos de ejecución
+import math    # Para operaciones matemáticas (sqrt)
+
+# Función para generar una matriz de tamaño filas x columnas
+def generar_matriz(filas, columnas):
+    # - Crea una lista de columnas con números aleatorios entre 0 y 100
+    return [[random.randint(0, 100) for _ in range(columnas)] for _ in range(filas)]
+
+# Función para contar números pares en la matriz
+def contar_pares(matriz):
+    conteo = 0  # Inicializa contador de pares
+    for fila in matriz:          # Recorre cada fila de la matriz
+        for valor in fila:       # Recorre cada valor en la fila
+            if valor % 2 == 0:   # Si el valor es divisible entre 2
+                conteo += 1      # Incrementa el contador
+    return conteo  # Retorna el total de números pares
+
+# Función para verificar si un número es primo
+def es_primo(n):
+    if n <= 1:      # Los números menores o iguales a 1 no son primos
+        return False
+    if n == 2:      # 2 es el único primo par
+        return True
+    if n % 2 == 0:  # Descartar cualquier otro número par
+        return False
+    # Verificar divisibilidad desde 3 hasta la raíz cuadrada de n
+    for i in range(3, int(math.sqrt(n)) + 1, 2):
+        if n % i == 0:  # Si encuentra un divisor
+            return False
+    return True  # Si no encontró divisores, es primo
+
+# Función para contar números primos en la matriz
+def contar_primos(matriz):
+    conteo = 0  # Inicializa contador de primos
+    for fila in matriz:        # Recorre cada fila
+        for valor in fila:     # Recorre cada valor
+            if es_primo(valor): # Si el valor es primo
+                conteo += 1    # Incrementa contador
+    return conteo  # Retorna total de primos
+
+# Bloque principal de ejecución
+if __name__ == "__main__":
+    filas, columnas = 100, 100  # Tamaño de la matriz (100x100)
+    
+    # Generar matriz aleatoria
+    matriz = generar_matriz(filas, columnas)
+    
+    # Contar números pares y medir tiempo
+    inicio = time.time()       # Marca tiempo inicial
+    pares = contar_pares(matriz) # Ejecuta conteo
+    fin = time.time()          # Marca tiempo final
+    print(f"Números pares: {pares}")
+    print(f"Tiempo de conteo pares: {fin - inicio:.6f} segundos")
+    
+    # Contar números primos y medir tiempo
+    inicio = time.time()        # Marca tiempo inicial
+    primos = contar_primos(matriz) # Ejecuta conteo
+    fin = time.time()          # Marca tiempo final
+    print(f"Números primos: {primos}")
+    print(f"Tiempo de conteo primos: {fin - inicio:.6f} segundos")
