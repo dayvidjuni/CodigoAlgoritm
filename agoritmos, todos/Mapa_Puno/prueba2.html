@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Simulador de Doxeo FALSO</title>
+  <style>
+    body {
+      font-family: monospace;
+      background: black;
+      color: #00ff00;
+      padding: 20px;
+    }
+    .pantalla {
+      white-space: pre-line;
+    }
+    button {
+      background-color: red;
+      color: white;
+      font-size: 16px;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔍 Simulador de Doxeo (FALSO)</h1>
+  <button onclick="iniciarDoxeo()">Iniciar Doxeo</button>
+  <div class="pantalla" id="pantalla"></div>
+
+  <script>
+    const nombres = ["Juan Pérez", "Laura Méndez", "Carlos Gómez", "Ana Torres"];
+    const direcciones = ["Av. Siempre Viva 123", "Calle Falsa 742", "Jr. Libertad 321"];
+    const telefonos = ["+51 987654321", "+51 912345678", "+51 934567890"];
+    const ips = ["192.168.1.101", "10.0.0.56", "172.16.5.23"];
+    const correos = ["ejemplo@gmail.com", "usuario@yahoo.com", "persona@hotmail.com"];
+    const tarjetas = ["**** **** **** 1234", "**** **** **** 5678", "**** **** **** 4321"];
+
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function iniciarDoxeo() {
+      const pantalla = document.getElementById("pantalla");
+      pantalla.innerHTML = "";
+      
+      const nombre = nombres[Math.floor(Math.random() * nombres.length)];
+      const direccion = direcciones[Math.floor(Math.random() * direcciones.length)];
+      const telefono = telefonos[Math.floor(Math.random() * telefonos.length)];
+      const ip = ips[Math.floor(Math.random() * ips.length)];
+      const correo = correos[Math.floor(Math.random() * correos.length)];
+      const tarjeta = tarjetas[Math.floor(Math.random() * tarjetas.length)];
+
+      const lineas = [
+        "[+] Conectando a base de datos...",
+        "[+] Accediendo al servidor...",
+        "[+] Encontrando coincidencias en redes sociales...",
+        `[✓] Nombre: ${nombre}`,
+        `[✓] Dirección: ${direccion}`,
+        `[✓] Teléfono: ${telefono}`,
+        `[✓] IP: ${ip}`,
+        `[✓] Correo: ${correo}`,
+        `[✓] Tarjeta bancaria: ${tarjeta}`,
+        "[+] Información encontrada. Doxeo completo (FALSO)"
+      ];
+
+      for (let linea of lineas) {
+        pantalla.innerHTML += linea + "\n";
+        await sleep(800);
+      }
+    }
+  </script>
+</body>
+</html>

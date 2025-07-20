@@ -1,0 +1,59 @@
+2025-07-07 20:07:47,138 - INFO - Iniciando carga de datos de calles
+2025-07-07 20:07:47,141 - INFO - Intentando conexión con OSM (intento 1)
+2025-07-07 20:08:00,051 - INFO - Datos OSM recibidos: 24071 elementos
+2025-07-07 20:08:00,077 - INFO - Iniciando construcción del grafo OSM
+2025-07-07 20:08:00,109 - INFO - Nodos cargados: 20504
+2025-07-07 20:08:00,375 - INFO - Grafo creado: 20503 nodos, 23263 aristas
+2025-07-07 20:08:00,377 - INFO - Iniciando geocodificación de lugares importantes
+2025-07-07 20:08:01,424 - INFO - Geocodificado: Plaza de Armas - (-16.2442805, -69.0926829)
+2025-07-07 20:08:03,814 - INFO - Geocodificado: Catedral de Puno - (-15.8409556, -70.029004)
+2025-07-07 20:08:06,124 - INFO - Geocodificado: Universidad Nacional del Altiplano - (-15.8242768, -70.0161264)
+2025-07-07 20:08:16,363 - WARNING - No encontrado: Hospital Nacional Dos de Mayo, Puno
+2025-07-07 20:08:18,682 - INFO - Geocodificado: Mercado Central - (-15.8375174, -70.026609)
+2025-07-07 20:08:27,857 - WARNING - No encontrado: Puerto Lacustre, Puno
+2025-07-07 20:08:30,160 - WARNING - Lugar fuera de área: Terminal Terrestre, Puno - (-14.0644741, -70.4352649)
+2025-07-07 20:08:32,480 - INFO - Geocodificado: Estadio Enrique Torres Belón - (-15.8370214, -70.0219969)
+2025-07-07 20:08:34,805 - INFO - Geocodificado: Mirador Kuntur Wasi - (-15.8471356, -70.0299513)
+2025-07-07 20:08:43,926 - WARNING - No encontrado: Cerro Huajsapata, Puno
+2025-07-07 20:08:46,870 - INFO - Geocodificado: Museo Carlos Dreyer - (-15.8407969, -70.0295443)
+2025-07-07 20:08:49,154 - INFO - Geocodificado: Parque Pino - (-15.8378073, -70.0280672)
+2025-07-07 20:08:58,766 - WARNING - No encontrado: Iglesia San Juan Bautista, Puno
+2025-07-07 20:09:08,398 - WARNING - No encontrado: Hospital Regional Manuel Núñez Butrón, Puno
+2025-07-07 20:09:10,703 - INFO - Geocodificado: Mercado Bellavista - (-15.8335335, -70.0233376)
+2025-07-07 20:09:13,013 - WARNING - Lugar fuera de área: Coliseo Cerrado, Puno - (-14.6122262, -70.7873503)
+2025-07-07 20:09:16,201 - WARNING - Lugar fuera de área: Complejo Cultural, Puno - (-14.9110316, -70.1981582)
+2025-07-07 20:09:28,655 - WARNING - No encontrado: Plaza de la Cultura, Puno
+2025-07-07 20:09:31,045 - WARNING - Lugar fuera de área: Parque Túpac Amaru, Puno - (-16.5654606, -69.3207868)
+2025-07-07 20:09:40,361 - WARNING - No encontrado: Plaza Aparicio Pomares, Puno
+2025-07-07 20:09:49,652 - WARNING - No encontrado: Capilla San Cristóbal, Puno
+2025-07-07 20:09:51,944 - INFO - Geocodificado: Mercado Laykakota - (-15.8465279, -70.0207765)
+2025-07-07 20:10:01,410 - WARNING - No encontrado: Colegio San Carlos, Puno
+2025-07-07 20:10:04,113 - WARNING - Lugar fuera de área: Colegio De La Salle, Puno - (-14.6142434, -70.7822415)
+2025-07-07 20:10:06,460 - WARNING - Lugar fuera de área: Plaza San Martín, Puno - (-14.7275099, -70.5117406)
+2025-07-07 20:10:08,748 - INFO - Geocodificado: Plaza Bolognesi - (-15.4963008, -70.1314472)
+2025-07-07 20:10:11,200 - WARNING - Lugar fuera de área: Plaza Grau, Puno - (-16.2355551, -68.9943829)
+2025-07-07 20:10:21,393 - WARNING - No encontrado: Plaza San Juan, Puno
+2025-07-07 20:10:23,946 - INFO - Geocodificado: Plaza Santa Rosa - (-15.061467, -69.8064094)
+2025-07-07 20:10:34,284 - WARNING - No encontrado: Plaza San Antonio, Puno
+2025-07-07 20:10:36,285 - INFO - Geocodificación completada: 12 lugares
+2025-07-07 20:10:36,325 - INFO - Datos cargados exitosamente
+2025-07-07 20:11:02,823 - INFO - Generando mapa de lugares disponibles
+2025-07-07 20:11:03,176 - INFO - Mapa guardado en: C:\Users\HP\AppData\Local\Temp\puno_mapa_1751937062.html
+2025-07-07 20:11:03,177 - INFO - Mapa de lugares generado exitosamente
+2025-07-07 20:11:21,298 - INFO - Iniciando cálculo de ruta: Mercado Central -> Mercado Bellavista
+2025-07-07 20:11:21,299 - INFO - Geocodificando dirección: Mercado Central
+2025-07-07 20:11:22,050 - INFO - Dirección encontrada: Mercado Central - (-15.8375174, -70.026609)
+2025-07-07 20:11:22,060 - INFO - Geocodificando dirección: Mercado Bellavista
+2025-07-07 20:11:23,057 - INFO - Dirección encontrada: Mercado Bellavista - (-15.8335335, -70.0233376)
+2025-07-07 20:11:23,068 - INFO - Aplicando algoritmo de Dijkstra
+2025-07-07 20:11:32,230 - ERROR - Error creando mapa de ruta: name 'distancia' is not defined
+2025-07-07 20:11:32,230 - INFO - Ruta calculada exitosamente: 23 nodos, 0.89 km
+2025-07-07 20:11:33,459 - INFO - Iniciando cálculo de ruta: Mercado Central -> Mercado Bellavista
+2025-07-07 20:11:33,459 - INFO - Geocodificando dirección: Mercado Central
+2025-07-07 20:11:33,798 - INFO - Dirección encontrada: Mercado Central - (-15.8375174, -70.026609)
+2025-07-07 20:11:33,809 - INFO - Geocodificando dirección: Mercado Bellavista
+2025-07-07 20:11:34,778 - INFO - Dirección encontrada: Mercado Bellavista - (-15.8335335, -70.0233376)
+2025-07-07 20:11:34,788 - INFO - Aplicando algoritmo de Dijkstra
+2025-07-07 20:12:37,459 - ERROR - Error creando mapa de ruta: name 'distancia' is not defined
+2025-07-07 20:12:37,459 - INFO - Ruta calculada exitosamente: 23 nodos, 0.89 km
+2025-07-07 20:12:42,586 - INFO - Archivo temporal eliminado: C:\Users\HP\AppData\Local\Temp\puno_mapa_1751937062.html

@@ -1,0 +1,4 @@
+digraph Flujo {
+	rankdir=LR
+	n0 [label="Insertar: 1\nNivel: 1" fillcolor=lightblue shape=box style=filled]
+}
